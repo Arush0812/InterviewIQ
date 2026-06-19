@@ -96,14 +96,14 @@ export default function CallUI({
 
   if (callingState === CallingState.LEFT) {
     return (
-      <div className="min-h-screen bg-[#0a0a0b] flex flex-col items-center justify-center gap-3">
+      <div className="min-h-screen bg-[#060b14] flex flex-col items-center justify-center gap-3">
         <p className="text-stone-400 text-sm">Leaving call…</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-[92vh] bg-[#0a0a0b] flex flex-col overflow-hidden">
+    <div className="min-h-[92vh] bg-[#060b14] flex flex-col overflow-hidden">
       {/* Top bar */}
       <div className="flex items-center justify-between px-6 py-3 border-b border-white/8 shrink-0">
         <div className="flex items-center gap-2">
@@ -137,7 +137,7 @@ export default function CallUI({
         </div>
 
         {/* ── RIGHT: Chat / AI panel ── */}
-        <div className="w-85 shrink-0 flex flex-col border-l border-white/8 bg-[#0a0a0b]">
+        <div className="w-85 shrink-0 flex flex-col border-l border-white/8 bg-[#060b14]">
           {/* Tab switcher */}
           <div className="flex border-b border-white/8 shrink-0">
             <button

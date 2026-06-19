@@ -11,6 +11,9 @@ export default function RoleRedirect({ role }) {
   const router = useRouter();
 
   useEffect(() => {
+    // Don't do anything until role is definitively known from the server
+    if (!role) return;
+
     if (role === "UNASSIGNED" && pathname !== "/onboarding")
       router.replace("/onboarding");
     // Already onboarded users shouldn't be on /onboarding

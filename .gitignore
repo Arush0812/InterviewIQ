@@ -41,3 +41,9 @@ yarn-error.log*
 next-env.d.ts
 
 /lib/generated/prisma
+
+# dev tools — never commit these
+ngrok-v3-stable-linux-amd64.tgz
+*.tgz
+proxy.js
+scripts/

@@ -26,7 +26,7 @@ export const SectionHeading = ({ gray, gold }) => (
 
 export default function PageHeader({ label, gray, gold, description, right }) {
   return (
-    <div className="border-b border-white/8 px-8 py-10">
+    <div className="border-b border-white/8 px-8 py-10 bg-[#0c1220]">
       <div className="max-w-6xl mx-auto flex items-center justify-between gap-4">
         <div>
           {label && <SectionLabel>{label}</SectionLabel>}

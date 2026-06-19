@@ -90,7 +90,7 @@ export default function SlotPicker({
 
   if (!availability) {
     return (
-      <div className="bg-[#0f0f11] border border-white/10 rounded-2xl p-8 text-center flex flex-col items-center gap-2">
+      <div className="bg-[#0c1220] border border-white/10 rounded-2xl p-8 text-center flex flex-col items-center gap-2">
         <span className="text-2xl">🕐</span>
         <p className="text-sm text-stone-500">No availability set yet.</p>
         <p className="text-xs text-stone-700">Check back later.</p>
@@ -108,7 +108,7 @@ export default function SlotPicker({
 
       <div className="flex flex-col gap-4">
         {/* ── Main picker card ── */}
-        <div className="bg-[#0f0f11] border border-white/10 rounded-2xl p-7 flex flex-col gap-6">
+        <div className="bg-[#0c1220] border border-white/10 rounded-2xl p-7 flex flex-col gap-6">
           {/* Header */}
           <div className="flex items-start justify-between gap-3">
             <div>
@@ -208,7 +208,7 @@ export default function SlotPicker({
         {selectedSlot && (
           <div
             ref={summaryRef}
-            className="bg-[#0f0f11] border border-amber-400/20 rounded-2xl p-6 flex flex-col gap-4"
+            className="bg-[#0c1220] border border-amber-400/20 rounded-2xl p-6 flex flex-col gap-4"
           >
             <p className="text-xs font-semibold text-stone-500 tracking-widest uppercase">
               Your booking

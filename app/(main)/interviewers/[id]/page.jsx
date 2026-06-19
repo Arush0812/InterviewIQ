@@ -31,7 +31,7 @@ export default async function InterviewerProfilePage({ params }) {
   if (!interviewer) notFound();
 
   return (
-    <main className="min-h-screen bg-black">
+    <main className="min-h-screen bg-[#080c14]">
       {/* ── Hero identity banner ── */}
       <section className="relative border-b border-white/8 overflow-hidden">
         <StarsBackgroundDemo />
@@ -102,7 +102,7 @@ export default async function InterviewerProfilePage({ params }) {
         {/* ── LEFT ── */}
         <div className="lg:col-span-3 flex flex-col gap-6 order-2 lg:-order-1">
           {interviewer.bio && (
-            <div className="bg-[#0f0f11] border border-white/10 rounded-2xl p-8 flex flex-col gap-5">
+            <div className="bg-[#0c1220] border border-white/10 rounded-2xl p-8 flex flex-col gap-5">
               <SectionLabel>About</SectionLabel>
               <p className="text-base text-stone-300 font-light leading-relaxed">
                 {interviewer.bio}
@@ -111,7 +111,7 @@ export default async function InterviewerProfilePage({ params }) {
           )}
 
           {interviewer.categories?.length > 0 && (
-            <div className="bg-[#0f0f11] border border-white/10 rounded-2xl p-8 flex flex-col gap-5">
+            <div className="bg-[#0c1220] border border-white/10 rounded-2xl p-8 flex flex-col gap-5">
               <div>
                 <SectionLabel>Specialties</SectionLabel>
                 <p className="text-sm text-stone-500 font-light mt-1">
@@ -131,7 +131,7 @@ export default async function InterviewerProfilePage({ params }) {
             </div>
           )}
 
-          <div className="bg-[#0f0f11] border border-white/10 rounded-2xl p-8 flex flex-col gap-6">
+          <div className="bg-[#0c1220] border border-white/10 rounded-2xl p-8 flex flex-col gap-6">
             <div>
               <SectionLabel>What to expect</SectionLabel>
               <p className="text-sm text-stone-500 font-light mt-1">

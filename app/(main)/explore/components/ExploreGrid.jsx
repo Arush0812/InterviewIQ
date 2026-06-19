@@ -40,7 +40,7 @@ export default function ExploreGrid({ interviewers }) {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search by name, title or company…"
-            className="pl-9 bg-[#0f0f11] border-white/10 text-stone-100 placeholder:text-stone-600 text-sm"
+            className="pl-9 bg-[#0c1220] border-white/10 text-stone-100 placeholder:text-stone-600 text-sm"
           />
         </div>
 

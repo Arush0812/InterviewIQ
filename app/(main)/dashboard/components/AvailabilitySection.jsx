@@ -58,7 +58,7 @@ export default function AvailabilitySection({ initial }) {
     : null;
 
   return (
-    <section className="bg-[#0f0f11] border border-white/10 rounded-2xl p-8 flex flex-col gap-7">
+    <section className="bg-[#0c1220] border border-white/10 rounded-2xl p-8 flex flex-col gap-7">
       {/* Header */}
       <div className="flex items-start justify-between gap-4">
         <div>
@@ -93,7 +93,7 @@ export default function AvailabilitySection({ initial }) {
             type="time"
             value={startTime}
             onChange={(e) => setStartTime(e.target.value)}
-            className="bg-[#141417] border-white/10 text-stone-100"
+            className="bg-[#111827] border-white/10 text-stone-100"
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -102,7 +102,7 @@ export default function AvailabilitySection({ initial }) {
             type="time"
             value={endTime}
             onChange={(e) => setEndTime(e.target.value)}
-            className="bg-[#141417] border-white/10 text-stone-100"
+            className="bg-[#111827] border-white/10 text-stone-100"
           />
         </div>
       </div>

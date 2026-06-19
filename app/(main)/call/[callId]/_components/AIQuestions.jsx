@@ -71,7 +71,7 @@ export default function AIQuestionsPanel({ categories }) {
           {questions.map((q, i) => (
             <div
               key={i}
-              className="rounded-xl border border-white/8 bg-[#141417] p-4 flex flex-col gap-2"
+              className="rounded-xl border border-white/8 bg-[#111827] p-4 flex flex-col gap-2"
             >
               <p className="text-sm text-stone-200 font-medium leading-snug">
                 {i + 1}. {q.question}

@@ -2,7 +2,6 @@ import { checkUser } from "@/lib/checkUser";
 import { Button } from "./ui/button";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
-import Image from "next/image";
 import RoleRedirect from "./RoleRedirect";
 import CreditButton from "./CreditButton";
 import { CalendarDays, Users } from "lucide-react";
@@ -11,15 +10,11 @@ const Header = async () => {
   const user = await checkUser();
 
   return (
-    <nav className="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-3 sm:px-10 py-3 border-b border-white/7 backdrop-blur-xl">
+    <nav className="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-3 sm:px-10 py-3 border-b border-white/7 backdrop-blur-xl bg-[#060b14]/80">
       <Link href="/">
-        <Image
-          src="/logo.png"
-          alt="InterviewIQ Logo"
-          width={100}
-          height={100}
-          className="h-11 w-auto"
-        />
+        <span className="font-serif text-xl tracking-tight">
+          <span className="bg-linear-to-br from-stone-100 via-stone-300 to-stone-500 bg-clip-text text-transparent">Interview</span><span className="bg-linear-to-br from-amber-300 via-amber-400 to-amber-600 bg-clip-text text-transparent">IQ</span>
+        </span>
       </Link>
 
       {user && <RoleRedirect role={user.role} />}

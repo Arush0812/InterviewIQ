@@ -5,9 +5,13 @@ import { CheckoutButton } from "@clerk/nextjs/experimental";
 import { SignInButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { PLANS } from "@/lib/data";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef } from "react";
 
 export default function PricingSection() {
   const { has, userId } = useAuth();
+  const router = useRouter();
+  const prevPlanRef = useRef(null);
 
   const isSignedIn = !!userId;
   const isOnStarter = isSignedIn && has({ plan: "starter" });
@@ -22,6 +26,21 @@ export default function PricingSection() {
     ? "free"
     : null;
 
+  // Watch for plan change in Clerk's session token — when it changes,
+  // trigger router.refresh() so the server Header re-fetches credits from DB
+  useEffect(() => {
+    if (prevPlanRef.current === null) {
+      // First render — just record current plan, don't refresh
+      prevPlanRef.current = activePlanSlug;
+      return;
+    }
+    if (prevPlanRef.current !== activePlanSlug) {
+      // Plan changed in Clerk token — now safe to refresh server components
+      prevPlanRef.current = activePlanSlug;
+      router.refresh();
+    }
+  }, [activePlanSlug, router]);
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
       {PLANS.map((plan) => {
@@ -32,13 +51,13 @@ export default function PricingSection() {
             key={plan.name}
             className={`relative rounded-2xl p-10 h-full flex flex-col transition-all duration-300 hover:-translate-y-1 ${
               plan.featured
-                ? "bg-[#141417] border border-amber-400/20"
-                : "bg-[#0f0f11] border border-white/10 hover:border-amber-400/10"
+                ? "bg-[#111827] border border-amber-400/20"
+                : "bg-[#0c1220] border border-white/10 hover:border-amber-400/10"
             } ${isActive ? "ring-1 ring-amber-400/30" : ""}`}
           >
             {/* Most Popular badge */}
             {plan.featured && !isActive && (
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-400 text-[#0a0a0b] text-xs font-bold tracking-wide uppercase px-3.5 py-1 rounded-full whitespace-nowrap">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-400 text-[#060b14] text-xs font-bold tracking-wide uppercase px-3.5 py-1 rounded-full whitespace-nowrap">
                 Most Popular
               </span>
             )}

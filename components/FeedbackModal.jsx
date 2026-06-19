@@ -62,7 +62,7 @@ export function FeedbackModal({
           </div>
 
           {/* Summary */}
-          <div className="bg-[#141417] border border-white/8 rounded-xl p-5">
+          <div className="bg-[#111827] border border-white/8 rounded-xl p-5">
             <div className="flex items-center gap-2 mb-2">
               <Sparkles size={13} className="text-amber-400" />
               <p className="text-[10px] uppercase tracking-widest text-stone-500">
@@ -73,7 +73,7 @@ export function FeedbackModal({
           </div>
 
           {/* Recommendation */}
-          <div className="bg-[#141417] border border-white/8 rounded-xl p-5">
+          <div className="bg-[#111827] border border-white/8 rounded-xl p-5">
             <p className="text-[10px] uppercase tracking-widest text-stone-500 mb-2">
               Recommendation
             </p>
@@ -101,7 +101,7 @@ export function FeedbackModal({
             ].map((item) => (
               <div
                 key={item.label}
-                className="bg-[#141417] border border-white/8 rounded-xl p-5"
+                className="bg-[#111827] border border-white/8 rounded-xl p-5"
               >
                 <div className="flex items-center gap-2 mb-2">
                   {item.icon}
@@ -116,7 +116,7 @@ export function FeedbackModal({
 
           {/* Strengths & Improvements */}
           <div className="grid grid-cols-2 gap-3">
-            <div className="bg-[#141417] border border-white/8 rounded-xl p-5">
+            <div className="bg-[#111827] border border-white/8 rounded-xl p-5">
               <div className="flex items-center gap-2 mb-3">
                 <CheckCircle2 size={13} className="text-green-400" />
                 <p className="text-[10px] uppercase tracking-widest text-stone-500">
@@ -137,7 +137,7 @@ export function FeedbackModal({
               </div>
             </div>
 
-            <div className="bg-[#141417] border border-white/8 rounded-xl p-5">
+            <div className="bg-[#111827] border border-white/8 rounded-xl p-5">
               <div className="flex items-center gap-2 mb-3">
                 <AlertCircle size={13} className="text-amber-400" />
                 <p className="text-[10px] uppercase tracking-widest text-stone-500">

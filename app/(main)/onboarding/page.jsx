@@ -10,13 +10,17 @@ import { Label } from "@/components/ui/label";
 import { completeOnboarding } from "@/actions/onboarding";
 import useFetch from "@/hooks/use-fetch";
 import { CATEGORIES, ONBOARDING_ROLES, YEARS_OPTIONS } from "@/lib/data";
+import { useUser } from "@clerk/nextjs";
+import { getCurrentUser } from "@/actions/user";
 
 export default function OnboardingPage() {
   const router = useRouter();
+  const { isLoaded } = useUser();
 
   const { data, loading, fn: onboardingFn } = useFetch(completeOnboarding);
 
   const [role, setRole] = useState(null);
+  const [checking, setChecking] = useState(true);
   const [form, setForm] = useState({
     title: "",
     company: "",
@@ -25,12 +29,29 @@ export default function OnboardingPage() {
     categories: [],
   });
 
+  // On mount: check if user already has a role in DB and redirect away immediately
+  useEffect(() => {
+    if (!isLoaded) return;
+    getCurrentUser().then((dbUser) => {
+      if (dbUser?.role === "INTERVIEWER") {
+        router.replace("/dashboard");
+      } else if (dbUser?.role === "INTERVIEWEE") {
+        router.replace("/explore");
+      } else {
+        setChecking(false);
+      }
+    });
+  }, [isLoaded, router]);
+
   useEffect(() => {
     if (data && !loading) {
       // Full reload so the server re-runs checkUser() with the updated role
       window.location.href = role === "INTERVIEWER" ? "/dashboard" : "/explore";
     }
   }, [data, loading, role]);
+
+  // Wait for clerk + DB role check before rendering anything
+  if (!isLoaded || checking) return null;
 
   const toggleCategory = (val) => {
     setForm((prev) => ({
@@ -67,7 +88,7 @@ export default function OnboardingPage() {
   };
 
   return (
-    <main className="min-h-screen bg-black px-6 py-24 flex flex-col items-center">
+    <main className="min-h-screen bg-[#080c14] px-6 py-24 flex flex-col items-center">
       <div className="w-full max-w-2xl">
         {/* Heading */}
         <div className="text-center mb-10">
@@ -93,7 +114,7 @@ export default function OnboardingPage() {
                 key={r.value}
                 type="button"
                 onClick={() => setRole(r.value)}
-                className="text-left rounded-2xl p-8 border border-white/10 bg-[#0f0f11] hover:border-amber-400/20 hover:-translate-y-0.5 transition-all duration-300"
+                className="text-left rounded-2xl p-8 border border-white/10 bg-[#0c1220] hover:border-amber-400/20 hover:-translate-y-0.5 transition-all duration-300"
               >
                 <span className="w-11 h-11 rounded-xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-xl mb-5">
                   {r.icon}
@@ -112,7 +133,7 @@ export default function OnboardingPage() {
         {role && (
           <div className="flex flex-col gap-6">
             {/* role strip */}
-            <div className="flex items-center justify-between bg-[#0f0f11] border border-white/10 rounded-2xl px-6 py-4">
+            <div className="flex items-center justify-between bg-[#0c1220] border border-white/10 rounded-2xl px-6 py-4">
               <div className="flex items-center gap-3">
                 <span className="w-9 h-9 rounded-xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-base shrink-0">
                   {ONBOARDING_ROLES.find((r) => r.value === role)?.icon}
@@ -131,7 +152,7 @@ export default function OnboardingPage() {
 
             {/* interviewer form */}
             {role === "INTERVIEWER" && (
-              <div className="bg-[#0f0f11] border border-white/10 rounded-2xl p-8 flex flex-col gap-6">
+              <div className="bg-[#0c1220] border border-white/10 rounded-2xl p-8 flex flex-col gap-6">
                 {/* Title + Company */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="flex flex-col gap-2">

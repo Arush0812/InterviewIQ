@@ -22,7 +22,7 @@ export default function PayoutReviewClient({ payout }) {
 
   if (done) {
     return (
-      <div className="bg-[#0f0f11] border border-white/10 rounded-2xl p-10 flex flex-col items-center gap-3 text-center">
+      <div className="bg-[#0c1220] border border-white/10 rounded-2xl p-10 flex flex-col items-center gap-3 text-center">
         <span className="text-3xl">✅</span>
         <p className="font-serif text-xl">
           <GrayTitle>Withdrawal approved</GrayTitle>
@@ -36,9 +36,9 @@ export default function PayoutReviewClient({ payout }) {
   }
 
   return (
-    <div className="bg-[#0f0f11] border border-white/10 rounded-2xl p-8 flex flex-col gap-5">
+    <div className="bg-[#0c1220] border border-white/10 rounded-2xl p-8 flex flex-col gap-5">
       {/* Payout summary */}
-      <div className="rounded-xl bg-[#141417] border border-white/8 p-4 flex flex-col gap-2">
+      <div className="rounded-xl bg-[#111827] border border-white/8 p-4 flex flex-col gap-2">
         <div className="flex justify-between text-xs">
           <span className="text-stone-500">Interviewer</span>
           <span className="text-stone-300">{payout.interviewerName}</span>
@@ -85,7 +85,7 @@ export default function PayoutReviewClient({ payout }) {
             approveFn({ payoutId: payout.id, adminPassword: password })
           }
           placeholder="Enter password…"
-          className="bg-[#141417] border-white/10 text-stone-100"
+          className="bg-[#111827] border-white/10 text-stone-100"
         />
       </div>
 

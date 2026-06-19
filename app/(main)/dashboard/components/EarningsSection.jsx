@@ -104,7 +104,7 @@ export default function EarningsSection({ stats, history }) {
         ].map((stat) => (
           <div
             key={stat.label}
-            className="bg-[#0f0f11] border border-white/10 rounded-2xl p-6 flex flex-col gap-2"
+            className="bg-[#0c1220] border border-white/10 rounded-2xl p-6 flex flex-col gap-2"
           >
             <span className="text-lg">{stat.icon}</span>
             <p
@@ -129,7 +129,7 @@ export default function EarningsSection({ stats, history }) {
       </div>
 
       {/* Withdrawal trigger card */}
-      <div className="bg-[#0f0f11] border border-white/10 rounded-2xl p-8 flex items-center justify-between gap-4">
+      <div className="bg-[#0c1220] border border-white/10 rounded-2xl p-8 flex items-center justify-between gap-4">
         <div>
           <h2 className="font-serif text-xl tracking-tight">
             <GrayTitle>Withdraw earnings</GrayTitle>
@@ -150,7 +150,7 @@ export default function EarningsSection({ stats, history }) {
 
       {/* Withdrawal history */}
       {history?.length > 0 && (
-        <div className="bg-[#0f0f11] border border-white/10 rounded-2xl p-8 flex flex-col gap-5">
+        <div className="bg-[#0c1220] border border-white/10 rounded-2xl p-8 flex flex-col gap-5">
           <p className="text-xs font-semibold text-stone-500 tracking-widest uppercase">
             Withdrawal history
           </p>
@@ -158,7 +158,7 @@ export default function EarningsSection({ stats, history }) {
             {history.map((p) => (
               <div
                 key={p.id}
-                className="flex items-center justify-between bg-[#141417] border border-white/8 rounded-xl px-5 py-4"
+                className="flex items-center justify-between bg-[#111827] border border-white/8 rounded-xl px-5 py-4"
               >
                 <div className="flex flex-col gap-0.5">
                   <p className="text-sm text-stone-300">
@@ -186,7 +186,7 @@ export default function EarningsSection({ stats, history }) {
 
       {/* Dialog */}
       <Dialog open={open} onOpenChange={handleOpenChange}>
-        <DialogContent className="bg-[#0f0f11] border border-white/10 text-stone-100 max-w-md">
+        <DialogContent className="bg-[#0c1220] border border-white/10 text-stone-100 max-w-md">
           {done ? (
             <div className="py-8 text-center flex flex-col items-center gap-4">
               <span className="w-14 h-14 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center text-2xl">
@@ -216,7 +216,7 @@ export default function EarningsSection({ stats, history }) {
 
               <div className="flex flex-col gap-5 py-2">
                 {/* Fee breakdown */}
-                <div className="rounded-xl bg-[#141417] border border-white/8 p-4 flex flex-col gap-2">
+                <div className="rounded-xl bg-[#111827] border border-white/8 p-4 flex flex-col gap-2">
                   <div className="flex justify-between text-xs text-stone-500">
                     <span>Balance (1 Cr = $5)</span>
                     <span className="text-green-400">${balance}</span>
@@ -244,7 +244,7 @@ export default function EarningsSection({ stats, history }) {
                       setDetail("");
                     }}
                   >
-                    <TabsList className="bg-[#141417] border border-white/10 w-full">
+                    <TabsList className="bg-[#111827] border border-white/10 w-full">
                       {PAYMENT_METHODS.map((m) => (
                         <TabsTrigger
                           key={m.value}
@@ -267,7 +267,7 @@ export default function EarningsSection({ stats, history }) {
                     value={detail}
                     onChange={(e) => setDetail(e.target.value)}
                     placeholder={selectedMethod?.placeholder}
-                    className="bg-[#141417] border-white/10 text-stone-100"
+                    className="bg-[#111827] border-white/10 text-stone-100"
                   />
                 </div>
 

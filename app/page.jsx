@@ -25,7 +25,7 @@ function MockUI({ rows = 3 }) {
   ];
 
   return (
-    <div className="mt-5 rounded-xl bg-[#141417] border border-white/10 overflow-hidden">
+    <div className="mt-5 rounded-xl bg-[#111827] border border-white/10 overflow-hidden">
       <div className="h-9 bg-white/5 border-b border-white/10 flex items-center px-3.5 gap-1.5">
         <span className="w-2 h-2 rounded-full bg-[#ff5f57]" />
         <span className="w-2 h-2 rounded-full bg-[#ffbd2e]" />
@@ -46,7 +46,7 @@ function MockUI({ rows = 3 }) {
 export function BentoCard({ icon, title, desc, children, className = "" }) {
   return (
     <div
-      className={`relative bg-[#0f0f11] border border-white/10 hover:border-amber-400/20 rounded-2xl p-9 h-full transition duration-300 overflow-hidden ${className}`}
+      className={`relative bg-[#0c1220] border border-white/10 hover:border-amber-400/20 rounded-2xl p-9 h-full transition duration-300 overflow-hidden ${className}`}
     >
       <div className="absolute inset-0 bg-linear-to-br from-amber-400/5 via-transparent pointer-events-none" />
 
@@ -65,7 +65,7 @@ export function BentoCard({ icon, title, desc, children, className = "" }) {
 
 export default function LandingPage() {
   return (
-    <div className="bg-black overflow-x-hidden">
+    <div className="bg-[#080c14] overflow-x-hidden">
       {/* HERO */}
       <section className="relative min-h-screen grid grid-cols-1 lg:grid-cols-5 px-4 sm:px-8 pt-28 sm:pt-32 pb-20 overflow-hidden">
         <StarsBackgroundDemo />
@@ -105,7 +105,7 @@ export default function LandingPage() {
               {AVATARS.map((av, i) => (
                 <div
                   key={i}
-                  className={`w-8 h-8 rounded-full border-2 border-[#0a0a0b] overflow-hidden ${
+                  className={`w-8 h-8 rounded-full border-2 border-[#060b14] overflow-hidden ${
                     i > 0 ? "-ml-2" : ""
                   }`}
                 >
@@ -197,7 +197,7 @@ export default function LandingPage() {
               title={<GrayTitle>Credit System</GrayTitle>}
               desc="Subscribe for monthly credits. Book sessions. Interviewers earn and withdraw any time."
             >
-              <div className="mt-5 rounded-xl bg-[#141417] border border-white/10 p-5 flex justify-between items-end">
+              <div className="mt-5 rounded-xl bg-[#111827] border border-white/10 p-5 flex justify-between items-end">
                 <div>
                   <p className="text-xs text-stone-600 mb-1">Your balance</p>
                   <p className="font-serif text-4xl leading-none bg-linear-to-br from-amber-300 to-amber-500 bg-clip-text text-transparent">
@@ -281,7 +281,7 @@ export default function LandingPage() {
           {ROLES.map((role) => (
             <div
               key={role.label}
-              className="relative bg-[#0f0f11] border border-white/10 hover:border-amber-400/20 rounded-2xl p-12 h-full transition duration-300 overflow-hidden"
+              className="relative bg-[#0c1220] border border-white/10 hover:border-amber-400/20 rounded-2xl p-12 h-full transition duration-300 overflow-hidden"
             >
               <div className="absolute bottom-0 right-0 w-48 h-48 rounded-full bg-[radial-gradient(circle,rgba(251,191,36,0.05)_0%,transparent_70%)] pointer-events-none" />
 
